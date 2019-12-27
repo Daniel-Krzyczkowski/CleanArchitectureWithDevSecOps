@@ -409,21 +409,21 @@ Configuration of Azure Web App is done during the deployment with below code. Pa
 -ConnectionStrings:AppDatabase "$(clean-arch-sql-db-connection-string)" -ApplicationInsights:InstrumentationKey "$(clean-arch-app-insights-key)" -AzureAdB2C:Tenant $(clean-arch-azure-ad-b2c-tenant-dev) -AzureAdB2C:ClientId $(clean-arch-ad-b2c-tenant-client-id) -AzureAdB2C:Policy $(clean-arch-azure-ad-b2c-policy-name) -AzureAdGraph:AzureAdB2CTenant $(clean-arch-azure-ad-b2c-tenant-dev) -AzureAdGraph:ClientId $(clean-arch-users-identity-management-app-id) -AzureAdGraph:ClientSecret $(clean-arch-users-identity-management-app-secret) -AzureAdGraph:PolicyName $(clean-arch-azure-ad-b2c-policy-name) -AzureAdGraph:ApiUrl $(clean-arch-azure-ad-b2c-graph-api-url) -AzureAdGraph:ApiVersion $(clean-arch-azure-ad-b2c-graph-api-version) -AzureAdGraph:ExtensionsAppClientId $(clean-arch-identity-experience-framework-directory-extensions-app-id) -MicrosoftGraph:AzureAdB2CTenant $(clean-arch-azure-ad-b2c-tenant-dev) -MicrosoftGraph:ClientId $(clean-arch-users-identity-management-app-id) -MicrosoftGraph:ClientSecret $(clean-arch-users-identity-management-app-secret) -MicrosoftGraph:ApiUrl $(clean-arch-microsoft-graph-api-url) -MicrosoftGraph:ApiVersion $(clean-arch-microsoft-graph-api-version) -CosmosDb:Account $(clean-arch-cosmos-db-account) -CosmosDb:Key $(clean-arch-cosmos-db-key) -CosmosDb:DatabaseName $(clean-arch-cosmos-db-name) -CosmosDb:TutorLearningProfilesContainerName $(clean-arch-cosmos-db-tutor-learning-profiles-container-name) -CosmosDb:ChatMessagesContainerName $(clean-arch-cosmos-db-chat-messages-container-name) -Azure:SignalR:ConnectionString $(clean-arch-signalr-connection-string) -NotificationHub:HubName $(clean-arch-notification-hub-name) -NotificationHub:HubDefaultFullSharedAccessSignature $(clean-arch-notification-hub-connection-string)
 ```
 
-![ContDelDep9.png](assets/ContDelDep14.png)
+![ContDelDep9.png](assets/ContDelDep14.PNG)
 
 If we look at the release pipeline for the infrastructure we can define which environment will be created: dev, test, staging or prod. Below example presents flow for the dev environment:
 
-![ContDelDep8.png](assets/ContDelDep8.png)
+![ContDelDep8.png](assets/ContDelDep8.PNG)
 
-![ContDelDep9.png](assets/ContDelDep9.png)
+![ContDelDep9.png](assets/ContDelDep9.PNG)
 
 In this case infrastructure code is stored in the GIT repository - ARM templates together with parameters json files:
 
-![ContDelDep10.png](assets/ContDelDep10.png)
+![ContDelDep10.png](assets/ContDelDep10.PNG)
 
 Once deployment is completed I can see all the components in the Azure portal:
 
-![ContDelDep10.png](assets/rg2.png)
+![ContDelDep10.png](assets/rg2.PNG)
 
 If you would like to stick to the naming conventions for Azure I really encourage you to check [Ready: Recommended naming and tagging conventions](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging).
 
@@ -434,10 +434,10 @@ Solution monitoring is very important part of the DevOps loop.
 
 In this case I used [Azure Application Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview) service which is integrated with my solution.
 
-![Dashboards2.png](assets/Dashboards2.png)
+![Dashboards2.png](assets/Dashboards2.PNG)
 
 In the Azure DevOps I have also setup dashboard to monitor build and release pipelines status:
-![Dashboards1.png](assets/Dashboards1.png)
+![Dashboards1.png](assets/Dashboards1.PNG)
 
 # Summary
 
