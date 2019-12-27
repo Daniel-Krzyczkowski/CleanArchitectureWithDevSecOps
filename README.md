@@ -199,7 +199,7 @@ We can also use live code analysis rules and code fixes addressing API design, p
 
 ![SecurityCodeAnalysis.png](assets/SecurityCodeAnalysis.png)
 
-Of course, there are a lot of different tools to apply security scanning - ath the end of this section I would like to mention two:
+Of course, there are a lot of different tools to apply security scanning:
 
 1. [WhiteSource Bolt](https://bolt.whitesourcesoftware.com/) - free developer tool for finding and fixing open source vulnerabilities
 2. [OWASP ZAP Proxy](https://github.com/zaproxy/zaproxy) - one of the world’s most popular free security tools. It can help you automatically find security vulnerabilities in your web applications while you are developing and testing your applications.
