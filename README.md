@@ -16,7 +16,6 @@ This is why I decided to create this content - to present how software developme
 I hope you will find it helpful and interesting. Source code for the Web API application and Azure ARM templates is available [here in this repository](https://github.com/Daniel-Krzyczkowski/CleanArchitectureWithDevSecOps/tree/master/src).
 
 *If you like this content, please give it a star!*
-<a class="github-button" href="https://github.com/ntkme/github-buttons" data-icon="octicon-star" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
 
 
 ## Below main chapters are covered:
