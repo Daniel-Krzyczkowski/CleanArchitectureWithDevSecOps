@@ -52,7 +52,7 @@ There are below Azure components used:
 Even if you think right now that software architecture is not related with DevOps and DevSecOps, believe me you are wrong. I was too.
 Let me start with Clean Architecture description.
 
-![CleanArchitectureDiagram2.png](assets/CleanArchitectureDiagram2.png)
+![CleanArchitectureDiagram2.png](assets/CleanArchitectureDiagram2.PNG)
 
 As you can see in the above diagram, dependencies flow toward the innermost circle. The Application Core takes its name from its position at the core of this diagram. It has no dependencies on other application layers. The application’s entities and interfaces are at the very center. Just outside, but still in the Application Core, are domain services, which typically implement interfaces defined in the inner circle. Outside of the Application Core, both the UI and the Infrastructure layers depend on the Application Core, but not on one another (necessarily).
 We can see that each part has its own responsibility:
@@ -63,29 +63,29 @@ At the end there is UI layer where Controllers are located together with View Mo
 
 Now if we would like to add unit tests it is much easier to do it because core logic does not have any infrastructure dependencies:
 
-![CleanArchitectureDiagram4.png](assets/CleanArchitectureDiagram4.png)
+![CleanArchitectureDiagram4.png](assets/CleanArchitectureDiagram4.PNG)
 
 &nbsp;
 
 In case of the project I prepared in this repository you can see that the structure is similar:
 
-![CleanArchitectureDiagram5.png](assets/CleanArchitectureDiagram5.png)
+![CleanArchitectureDiagram5.png](assets/CleanArchitectureDiagram5.PNG)
 
 **CleanArchitecture.Core** project contains interfaces, entities, DTOs, Erros descriptions and services. There are no infrastructure dependencies included. This is the core logic of the application:
 
-![CleanArchitectureDiagram6.png](assets/CleanArchitectureDiagram6.png)
+![CleanArchitectureDiagram6.png](assets/CleanArchitectureDiagram6.PNG)
 
 **CleanArchitecture.Infrastructure** project contains repositories implementations with Entity Framework Core and Cosmos DB SDK. This is the place where push notifications service is implement using Azure Notification Hub SDK:
 
-![CleanArchitectureDiagram7.png](assets/CleanArchitectureDiagram7.png)
+![CleanArchitectureDiagram7.png](assets/CleanArchitectureDiagram7.PNG)
 
 **CleanArchitecture.WebAPI** project contains controllers, SignalR Hub, dependencies registrations and request handlers (Mediator pattern is used):
 
-![CleanArchitectureDiagram8.png](assets/CleanArchitectureDiagram8.png)
+![CleanArchitectureDiagram8.png](assets/CleanArchitectureDiagram8.PNG)
 
 **CleanArchitecture.Core.UnitTests** project contains unit tests for the services defined in the Core project:
 
-![CleanArchitectureDiagram9.png](assets/CleanArchitectureDiagram9.png)
+![CleanArchitectureDiagram9.png](assets/CleanArchitectureDiagram9.PNG)
 
 
 I encourage you to visit the repository and review the source code structure. Of course I am opened for any improvements in pull requests!
