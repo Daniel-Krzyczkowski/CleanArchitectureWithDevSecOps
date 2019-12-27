@@ -432,12 +432,12 @@ If you would like to stick to the naming conventions for Azure I really encourag
 
 Solution monitoring is very important part of the DevOps loop.
 
-In this case I used [Azure Application Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview) service which is integrated with my solution.
-
-![Dashboards2.png](assets/Dashboards2.PNG)
-
 In the Azure DevOps I have also setup dashboard to monitor build and release pipelines status:
 ![Dashboards1.png](assets/Dashboards1.PNG)
+
+In this case I used [Azure Application Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview) service which is integrated with my solution:
+
+![Dashboards2.png](assets/Dashboards2.PNG)
 
 # Summary
 
