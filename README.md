@@ -247,31 +247,31 @@ I created separate GIT repositories:
 2. For the Web API application code
 3. For the Azure AD B2C policies files
 
-![ContDelDep11.png](assets/ContDelDep11.png)
+![ContDelDep11.png](assets/ContDelDep11.PNG)
 
-![ContDelDep12.png](assets/ContDelDep12.png)
+![ContDelDep12.png](assets/ContDelDep12.PNG)
 
-![ContDelDep13.png](assets/ContDelDep13.png)
+![ContDelDep13.png](assets/ContDelDep13.PNG)
 
 In the Azure DevOps I created two separate Build pipelines:
 
 1. CI-clean-arch-asp-net-core-web-api - to build package with Web API application
 2. CI-clean-arch-dev-infrastructure - to build the package with the infrastructure code for dev environment (I am using Infrastructure as a Code approach - IAC)
 
-![ContDelDep4.png](assets/ContDelDep4.png)
+![ContDelDep4.png](assets/ContDelDep4.PNG)
 
 All secrets are stored in the Azure Key Vault and connected using Azure DevOps Variable Groups. If you would like to ready more I encourage you to check my blog articles about it:
 
 1. [How to inject Azure Key Vault secrets in the Azure DevOps CI/CD pipelines](https://daniel-krzyczkowski.github.io/How-to-inject-Azure-Key-Vault-secrets-in-the-Azure-DevOps-CICD-pipelines/)
 2. [Access Azure Key Vault secrets in the Azure DevOps Release Pipelines](https://daniel-krzyczkowski.github.io/Access-Azure-Key-Vault-secrets-in-the-Azure-DevOps-Release-Pipelines/)
 
-![ContDelDep2.png](assets/ContDelDep3.png)
+![ContDelDep2.png](assets/ContDelDep3.PNG)
 
 I have two additional groups to keep variables for environment configuration and application configuration.
 
 This is the build pipeline for the Web API application:
 
-![ContDelDep2.png](assets/ContDelDep2.png)
+![ContDelDep2.png](assets/ContDelDep2.PNG)
 
 This is the YAML code of this build pipeline:
 
