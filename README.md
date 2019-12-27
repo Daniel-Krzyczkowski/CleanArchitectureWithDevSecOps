@@ -395,13 +395,13 @@ Of course there are many great tools that support Infrastructure as a Code appro
 
 There are two release pipelines created: one for the infrastructure and second one for the Web API application:
 
-![ContDelDep5.png](assets/ContDelDep5.png)
+![ContDelDep5.png](assets/ContDelDep5.PNG)
 
 Deployment of the application can be done to one of four environments: dev, test, staging and production:
 
-![ContDelDep6.png](assets/ContDelDep6.png)
+![ContDelDep6.png](assets/ContDelDep6.PNG)
 
-![ContDelDep7.png](assets/ContDelDep7.png)
+![ContDelDep7.png](assets/ContDelDep7.PNG)
 
 Configuration of Azure Web App is done during the deployment with below code. Parameters are securly injected:
 
