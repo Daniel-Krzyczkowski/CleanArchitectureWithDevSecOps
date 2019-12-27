@@ -3,16 +3,16 @@
 # Introduction
 #### Clean Architecture with DevSecOps is the showcase project to present best DevSevOps practices together with Clean Architecture patterns for building ASP .NET Core Web APIs hosted on Microsoft Azure cloud.
 
-I would like to start with great sentence from Gerald Weinberg:
+I would like to start with a great sentence from Gerald Weinberg:
 
 *"If builders built buildings the way programmers wrote programs, then the first woodpecker that came along would destroy civilization."*
 
-This is so true and still actual. Nowadays it is not only about the software development but also about the whole strategy related with managing application lifecycle together with security.
-The era of monolithic IT projects where changes were applied occasionally after release is history now. It does not matter if we are talking about projects in the cloud or on-premise. There is one goal: manage solution efficiently and shorten the time spent on management and changes implementation together with deployment.
+This is so true and still actual. Nowadays it is not only about software development but also about the whole strategy related to managing the application lifecycle together with security.
+The era of monolithic IT projects where changes were applied occasionally after release is history now. It does not matter if we are talking about projects in the cloud or on-premise. There is one goal: manage solutions efficiently and shorten the time spent on management and changes implementation together with deployment.
 
 **This is why developers should architect and design software solutions with maintainability in mind.**
 
-This is why I decided to create this content - to present how software development is strognly related to DevOps and security (which is called DevSevOps). I collected information from many different great sources which I listed in each section of this article. I am using Azure DevOps as a tool to maintain best DevOps practices.
+This is why I decided to create this content - to present how software development is strongly related to DevOps and security (which is called DevSevOps). I collected information from many different great sources which I listed in each section of this article. I am using Azure DevOps as a tool to maintain the best DevOps practices.
 I hope you will find it helpful and interesting. Source code for the Web API application and Azure ARM templates is available [here in this repository](https://github.com/Daniel-Krzyczkowski/CleanArchitectureWithDevSecOps/tree/master/src).
 
 *If you like this content, please give it a star!*
@@ -30,7 +30,7 @@ I hope you will find it helpful and interesting. Source code for the Web API app
 
 **Source code of the Web API application is located in the repository.**
 
-Basically application business logic is related with learning. There are students and tutors and they can contact each other to schedule lessons.
+Application business logic is related to learning. There are students and tutors and they can contact each other to schedule lessons.
 
 &nbsp;
 
@@ -52,17 +52,17 @@ There are below Azure components used:
 
 # Clean architecture with Web API built with ASP .NET Core
 
-Even if you think right now that software architecture is not related with DevOps and DevSecOps, believe me you are wrong. I was too.
-Let me start with Clean Architecture description.
+Even if you think right now that software architecture is not related to DevOps and DevSecOps, believe me, you are wrong. I was too.
+Let me start with the Clean Architecture description.
 
 ![CleanArchitectureDiagram2.png](assets/CleanArchitectureDiagram2.PNG)
 
 As you can see in the above diagram, dependencies flow toward the innermost circle. The Application Core takes its name from its position at the core of this diagram. It has no dependencies on other application layers. The application’s entities and interfaces are at the very center. Just outside, but still in the Application Core, are domain services, which typically implement interfaces defined in the inner circle. Outside of the Application Core, both the UI and the Infrastructure layers depend on the Application Core, but not on one another (necessarily).
-We can see that each part has its own responsibility:
+We can see that each part has its responsibility:
 
-In the center there are entities and interfaces and also services without any external infrastructure dependencies. This is the heart of the application - core business logic.
-Then we have infrastructure part where all infrastructure services are located: like the one for sending push notifications in our case.
-At the end there is UI layer where Controllers are located together with View Models.
+In the center, there are entities and interfaces and also services without any external infrastructure dependencies. This is the heart of the application - core business logic.
+Then we have an infrastructure part where all infrastructure services are located: like the one for sending push notifications in our case.
+In the end, there is a UI layer where Controllers are located together with View Models.
 
 Now if we would like to add unit tests it is much easier to do it because core logic does not have any infrastructure dependencies:
 
@@ -70,15 +70,15 @@ Now if we would like to add unit tests it is much easier to do it because core l
 
 &nbsp;
 
-In case of the project I prepared in this repository you can see that the structure is similar:
+In the case of the project I prepared in this repository you can see that the structure is similar:
 
 ![CleanArchitectureDiagram5.png](assets/CleanArchitectureDiagram5.PNG)
 
-**CleanArchitecture.Core** project contains interfaces, entities, DTOs, Erros descriptions and services. There are no infrastructure dependencies included. This is the core logic of the application:
+**CleanArchitecture.Core** project contains interfaces, entities, DTOs, Errors descriptions and services. There are no infrastructure dependencies included. This is the core logic of the application:
 
 ![CleanArchitectureDiagram6.png](assets/CleanArchitectureDiagram6.PNG)
 
-**CleanArchitecture.Infrastructure** project contains repositories implementations with Entity Framework Core and Cosmos DB SDK. This is the place where push notifications service is implement using Azure Notification Hub SDK:
+**CleanArchitecture.Infrastructure** project contains repositories implementations with Entity Framework Core and Cosmos DB SDK. This is the place where push notifications service is implemented using Azure Notification Hub SDK:
 
 ![CleanArchitectureDiagram7.png](assets/CleanArchitectureDiagram7.PNG)
 
@@ -91,7 +91,7 @@ In case of the project I prepared in this repository you can see that the struct
 ![CleanArchitectureDiagram9.png](assets/CleanArchitectureDiagram9.PNG)
 
 
-I encourage you to visit the repository and review the source code structure. Of course I am opened for any improvements in pull requests!
+I encourage you to visit the repository and review the source code structure. Of course, I am opened to any improvements in pull requests!
 
 In this section I used content from below great sources:
 
@@ -102,10 +102,10 @@ In this section I used content from below great sources:
 
 #  DevSecOps - DevOps culture together with Security
 
-Once we discussed Clean Architecture we can move to DevSecOps term. First lets describe what DevOps is.
+Once we discussed Clean Architecture we can move to DevSecOps term. First, let's describe what DevOps is.
 
 **DevOps** is the combination of cultural philosophies, practices, and tools that increases an organization’s ability to deliver IT solutions and services fast and efficiently.
-Thinking about DevOps in the context of a specific tool or team is wrong. DevOps also is often described as a set of practices to follow to achieve the planned end result in the shortest time possible.
+Thinking about DevOps in the context of a specific tool or team is wrong. DevOps also is often described as a set of practices to follow to achieve the planned result in the shortest time possible.
 
 ![DevOpsCircle.png](assets/DevOpsCircle.png)
 
@@ -119,7 +119,7 @@ DevOps accelerates the company technical capabilities by affecting the following
 If you would like to read more I encourage you to read [my article about DevOps.](https://predica.pl/blog/what-is-devops/) Now once we now what DevOps term is we can describe DevSecOps.
 
 **DevSecOps (DevOps + Security)** is a practice that better aligns security, engineering, and operations and infuses security throughout the DevOps lifecycle.
-It means that we extend DevOps best practices with securty aspect. What does it mean? Many things!
+It means that we extend DevOps best practices with security aspects. What does it mean? Many things!
 
 1. Create secure code from the start of development all the way to the deployed application
 2. Secure and scan open-source libraries and third-party components
@@ -127,7 +127,7 @@ It means that we extend DevOps best practices with securty aspect. What does it 
 4. Do not keep credentials in the source code
 5. Do not keep credentials in the infrastructure source code
 
-There are many other points. I highly recommend to see [DevSecOps Security Checklist.](https://www.sqreen.com/checklists/devsecops-security-checklist)
+There are many other points. I highly recommend seeing [DevSecOps Security Checklist.](https://www.sqreen.com/checklists/devsecops-security-checklist)
 
 &nbsp;
 
@@ -183,62 +183,62 @@ In case of the project I created for this article you can see that no credential
 
 ```
 
-All above credentials are injected in the release pipelne in the Azure DevOps.
+All the above credentials are injected in the release pipeline in the Azure DevOps.
 
-To enhance security of the application we can also use [NWebsec-Security libraries for ASP.NET Core](https://docs.nwebsec.com/en/latest/). These libraries work together to remove version headers, control cache headers, stop potentially dangerous redirects, and set important security headers. You can check how to use middleware in the "Startup.cs" file of the Web API application I developed.
+To enhance the security of the application we can also use [NWebsec-Security libraries for ASP.NET Core](https://docs.nwebsec.com/en/latest/). These libraries work together to remove version headers, control cache headers, stop potentially dangerous redirects, and set important security headers. You can check how to use middleware in the "Startup.cs" file of the Web API application I developed.
 
 ![ContDelDep15.png](assets/ContDelDep16.PNG)
 
-We can check security of our ASP .NET Core Web app using [HSTS PreLoad website](https://hstspreload.org/). There we have to enter the domain and click the button. Report will be visible after few seconds.
+We can check the security of our ASP .NET Core Web app using [HSTS PreLoad website](https://hstspreload.org/). There we have to enter the domain and click the button. The report will be visible after a few seconds.
 
 **This is not the end!**
 
-We can also use live code analysis rules and code fixes addressing API design, performance, security, and best practices for C# - there is great pugin for Visual Studio called [Microsoft Code Analysis 2019](https://marketplace.visualstudio.com/items?itemName=VisualStudioPlatformTeam.MicrosoftCodeAnalysis2019):
+We can also use live code analysis rules and code fixes addressing API design, performance, security, and best practices for C# - there is a great plugin for Visual Studio called [Microsoft Code Analysis 2019](https://marketplace.visualstudio.com/items?itemName=VisualStudioPlatformTeam.MicrosoftCodeAnalysis2019):
 
 ![SecurityCodeAnalysis2.png](assets/SecurityCodeAnalysis2.PNG)
 
 ![SecurityCodeAnalysis.png](assets/SecurityCodeAnalysis.png)
 
-Of course there are a lot of different tools to apply security scanning - ath the end of this section I would like to mention two:
+Of course, there are a lot of different tools to apply security scanning - ath the end of this section I would like to mention two:
 
 1. [WhiteSource Bolt](https://bolt.whitesourcesoftware.com/) - free developer tool for finding and fixing open source vulnerabilities
 2. [OWASP ZAP Proxy](https://github.com/zaproxy/zaproxy) - one of the world’s most popular free security tools. It can help you automatically find security vulnerabilities in your web applications while you are developing and testing your applications.
-3. [Sonar Cloud](https://sonarcloud.io/) - open source platform to inspect continuously the quality of source code and detect bugs, vulnerabilities and code smells in more than 20 different languages
+3. [Sonar Cloud](https://sonarcloud.io/) - an open-source platform to inspect continuously the quality of source code and detect bugs, vulnerabilities and code smells in more than 20 different languages
 4. [SonarQube](https://www.sonarqube.org/) - automatic code review tool to detect bugs, vulnerabilities and code smells in the source code
 
-# Release automation with with Continuous Integration and Delivery
+# Release automation with Continuous Integration and Delivery
 
-We discussed application architecture and DevSecOps aspects. In this section I would like to discuss different ways to manage infrastructure with best DevSecOps practices. Once again lets look at below solution architecture diagram:
+We discussed application architecture and DevSecOps aspects. In this section, I would like to discuss different ways to manage infrastructure with the best DevSecOps practices. Once again let's look at below solution architecture diagram:
 
 ![CleanArchitectureWithDevSecOpsArchitecture.png](assets/CleanArchitectureWithDevSecOpsArchitecture.png)
 
-We can see that there are many components. We can ask following questions:
+We can see that there are many components. We can ask the following questions:
 
 1. Do we have to create them manually each time?
 2. What can we do if there is a failure in one of them?
 3. How to manage security?
 4. Do we have to build app packages manually each time when there is a new feature available?
 
-This is the case where Continous Integration and Continuous Delivery/Deployment terms are used. Lets discuss them first.
+This is the case where Continous Integration and Continuous Delivery/Deployment terms are used. Let's discuss them first.
 
 **Continuous Integration**
 
 Development practice that requires developers to integrate code into a shared repository several times a day. Ensure that you do not ship broken code (automatic builds)
-and applu security scan.
+and apply a security scan.
 
-**Continuous Delovery**
+**Continuous Delivery**
 
 Software engineering approach in which teams produce software in short cycles, ensuring that the software can be reliably released at any time.
 
 **Continuous Deployment**
 
-The difference between Continuous Delivery and Deployment is nicely shown on below image:
+The difference between Continuous Delivery and Deployment is nicely shown on the below image:
 
 ![ContDelDep.png](assets/ContDelDep.png)
 
-In the Continuous Delivery scenario there is automatic deployment on the production environment.
+In the Continuous Delivery scenario, there is automatic deployment on the production environment.
 
-Lets look how it is configured in case of my project presented in this article.
+Let's look at how it is configured in case of my project presented in this article.
 
 
 
@@ -263,7 +263,7 @@ In the Azure DevOps I created two separate Build pipelines:
 
 ![ContDelDep4.png](assets/ContDelDep4.PNG)
 
-All secrets are stored in the Azure Key Vault and connected using Azure DevOps Variable Groups. If you would like to ready more I encourage you to check my blog articles about it:
+All secrets are stored in the Azure Key Vault and connected using Azure DevOps Variable Groups. If you would like to read more I encourage you to check my blog articles about it:
 
 1. [How to inject Azure Key Vault secrets in the Azure DevOps CI/CD pipelines](https://daniel-krzyczkowski.github.io/How-to-inject-Azure-Key-Vault-secrets-in-the-Azure-DevOps-CICD-pipelines/)
 2. [Access Azure Key Vault secrets in the Azure DevOps Release Pipelines](https://daniel-krzyczkowski.github.io/Access-Azure-Key-Vault-secrets-in-the-Azure-DevOps-Release-Pipelines/)
@@ -393,14 +393,14 @@ steps:
 ```
 
 I am using [Replace Tokens extension for Azure DevOps](https://marketplace.visualstudio.com/items?itemName=qetza.replacetokens)
-to inject parameters from the variable groups. With this approach I can have ARM templates stored int the source code repository and use them to create different environments.
-Of course there are many great tools that support Infrastructure as a Code approach like [Terraform](https://www.terraform.io/).
+to inject parameters from the variable groups. With this approach, I can have ARM templates stored int the source code repository and use them to create different environments.
+Of course, there are many great tools that support Infrastructure as a Code approach like [Terraform](https://www.terraform.io/).
 
 There are two release pipelines created: one for the infrastructure and second one for the Web API application:
 
 ![ContDelDep5.png](assets/ContDelDep5.PNG)
 
-Deployment of the application can be done to one of four environments: dev, test, staging and production:
+Deployment of the application can be done to one of four environments: dev, test, staging, and production:
 
 ![ContDelDep6.png](assets/ContDelDep6.PNG)
 
@@ -420,28 +420,28 @@ If we look at the release pipeline for the infrastructure we can define which en
 
 ![ContDelDep9.png](assets/ContDelDep17.PNG)
 
-In this case infrastructure code is stored in the GIT repository - ARM templates together with parameters json files:
+In this case infrastructure code is stored in the GIT repository - ARM templates together with parameters JSON files:
 
 ![ContDelDep10.png](assets/ContDelDep10.PNG)
 
-Once deployment is completed I can see all the components in the Azure portal:
+Once the deployment is completed I can see all the components in the Azure portal:
 
 ![ContDelDep10.png](assets/rg2.PNG)
 
-If you would like to stick to the naming conventions for Azure I really encourage you to check [Ready: Recommended naming and tagging conventions](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging).
+If you would like to stick to the naming conventions for Azure I encourage you to check [Ready: Recommended naming and tagging conventions](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging).
 
 
 # Solution monitoring
 
-Solution monitoring is very important part of the DevOps loop.
+Solution monitoring is a very important part of the DevOps loop.
 
-In the Azure DevOps I have also setup dashboard to monitor build and release pipelines status:
+In the Azure DevOps I have also set up dashboard to monitor build and release pipelines status:
 ![Dashboards1.png](assets/Dashboards1.PNG)
 
-In this case I used [Azure Application Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview) service which is integrated with my solution:
+In this case, I used [Azure Application Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview) service which is integrated with my solution:
 
 ![Dashboards2.png](assets/Dashboards2.PNG)
 
 # Summary
 
-In this article I wanted to present different aspects of Clean Architecture together with DevSevOps. I hope you found it interesting and valuable. In case of any questions please contact me on Twitter or LinkedIn. Of course any comments more than welcome because this is not one, the best approach in the world. This is to inspire people how different Dev and Ops and Security parts are connected together.
+In this article, I wanted to present different aspects of Clean Architecture together with DevSevOps. I hope you found it interesting and valuable. In case of any questions please contact me on Twitter or LinkedIn. Of course, any comments more than welcome because this is not one, the best approach in the world. This is to inspire people how different Dev and Ops and Security parts are connected.
