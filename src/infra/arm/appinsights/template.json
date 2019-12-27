@@ -1,0 +1,36 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "type": "string"
+        },
+        "type": {
+            "type": "string"
+        },
+        "regionId": {
+            "type": "string"
+        },
+        "tagsArray": {
+            "type": "object"
+        },
+        "requestSource": {
+            "type": "string"
+        }
+    },
+    "resources": [
+        {
+            "name": "[parameters('name')]",
+            "type": "microsoft.insights/components",
+            "location": "[parameters('regionId')]",
+            "tags": "[parameters('tagsArray')]",
+            "apiVersion": "2014-08-01",
+            "properties": {
+                "ApplicationId": "[parameters('name')]",
+                "Application_Type": "[parameters('type')]",
+                "Flow_Type": "Redfield",
+                "Request_Source": "[parameters('requestSource')]"
+            }
+        }
+    ]
+}

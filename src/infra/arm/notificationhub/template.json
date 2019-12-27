@@ -1,0 +1,51 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "namespaceLocation": {
+            "type": "string"
+        },
+        "namespaceName": {
+            "type": "string"
+        },
+        "notificationHubName": {
+            "type": "string"
+        },
+        "sku": {
+            "type": "string"
+        }
+    },
+    "resources": [
+        {
+            "apiVersion": "2017-04-01",
+            "name": "[parameters('namespaceName')]",
+            "type": "Microsoft.NotificationHubs/namespaces",
+            "location": "[parameters('namespaceLocation')]",
+            "properties": {
+                "name": "[parameters('namespaceName')]",
+                "region": "[parameters('namespaceLocation')]",
+                "namespaceType": 1
+            },
+            "sku": {
+                "name": "[parameters('sku')]"
+            },
+            "resources": [
+                {
+                    "apiVersion": "2017-04-01",
+                    "name": "[parameters('notificationHubName')]",
+                    "type": "notificationHubs",
+                    "location": "[parameters('namespaceLocation')]",
+                    "dependsOn": [
+                        "[concat('Microsoft.NotificationHubs/namespaces/', parameters('namespaceName'))]"
+                    ],
+                    "properties": {
+                        "name": "[parameters('notificationHubName')]"
+                    },
+                    "sku": {
+                        "name": "[parameters('sku')]"
+                    }
+                }
+            ]
+        }
+    ]
+}

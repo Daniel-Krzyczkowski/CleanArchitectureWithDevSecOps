@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "value": "#{clean-arch-signalr-service-name}#"
+        },
+        "location": {
+            "value": "#{clean-arch-signalr-service-location}#"
+        },
+        "skuName": {
+            "value": "Free_F1"
+        },
+        "tier": {
+            "value": "Free"
+        },
+        "capacity": {
+            "value": 1
+        },
+        "serviceMode": {
+            "value": "Default"
+        },
+        "enableConnectivityLogs": {
+            "value": "true"
+        },
+        "tags": {
+            "value": {}
+        }
+    }
+}

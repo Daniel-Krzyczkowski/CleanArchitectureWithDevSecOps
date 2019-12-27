@@ -1,0 +1,48 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "value": "c57fb7dd-0b35-4435-bd89-097ccc8ff820"
+        },
+        "name": {
+            "value": "#{clean-arch-web-app-name}#"
+        },
+        "location": {
+            "value": "#{clean-arch-web-app-location}#"
+        },
+        "hostingEnvironment": {
+            "value": ""
+        },
+        "hostingPlanName": {
+            "value": "#{clean-arch-web-app-hosting-plan-name}#"
+        },
+        "serverFarmResourceGroup": {
+            "value": "#{clean-arch-rg-name}#"
+        },
+        "alwaysOn": {
+            "value": false
+        },
+        "sku": {
+            "value": "Free"
+        },
+        "skuCode": {
+            "value": "F1"
+        },
+        "workerSize": {
+            "value": "0"
+        },
+        "workerSizeId": {
+            "value": "0"
+        },
+        "numberOfWorkers": {
+            "value": "1"
+        },
+        "currentStack": {
+            "value": "dotnetcore"
+        },
+        "errorLink": {
+            "value": "https://#{clean-arch-web-app-name}#.scm.azurewebsites.net/detectors"
+        }
+    }
+}

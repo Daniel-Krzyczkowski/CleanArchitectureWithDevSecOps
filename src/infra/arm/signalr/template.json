@@ -1,0 +1,77 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string"
+        },
+        "skuName": {
+            "type": "string",
+            "allowedValues": [
+                "Free_F1",
+                "Standard_S1"
+            ]
+        },
+        "tier": {
+            "type": "string",
+            "allowedValues": [
+                "Free",
+                "Standard",
+                "Premium"
+            ]
+        },
+        "capacity": {
+            "type": "int"
+        },
+        "serviceMode": {
+            "type": "string",
+            "defaultValue": "Default",
+            "allowedValues": [
+                "Default",
+                "Serverless",
+                "Classic",
+                "PredefinedOnly"
+            ]
+        },
+        "enableConnectivityLogs": {
+            "type": "string",
+            "defaultValue": "true",
+            "allowedValues": [
+                "true"
+            ]
+        },
+        "tags": {
+            "type": "Object"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.SignalRService/SignalR",
+            "name": "[parameters('name')]",
+            "apiVersion": "2018-10-01",
+            "location": "[parameters('location')]",
+            "properties": {
+                "hostNamePrefix": "[parameters('name')]",
+                "features": [
+                    {
+                        "flag": "ServiceMode",
+                        "value": "[parameters('serviceMode')]"
+                    },
+                    {
+                        "flag": "EnableConnectivityLogs",
+                        "value": "[parameters('enableConnectivityLogs')]"
+                    }
+                ]
+            },
+            "sku": {
+                "name": "[parameters('skuName')]",
+                "tier": "[parameters('tier')]",
+                "capacity": "[parameters('capacity')]"
+            },
+            "tags": "[parameters('tags')]"
+        }
+    ]
+}
