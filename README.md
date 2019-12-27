@@ -192,7 +192,7 @@ We can check security of our ASP .NET Core Web app using [HSTS PreLoad website](
 
 We can also use live code analysis rules and code fixes addressing API design, performance, security, and best practices for C# - there is great pugin for Visual Studio called [Microsoft Code Analysis 2019](https://marketplace.visualstudio.com/items?itemName=VisualStudioPlatformTeam.MicrosoftCodeAnalysis2019):
 
-![SecurityCodeAnalysis2.png](assets/SecurityCodeAnalysis2.png)
+![SecurityCodeAnalysis2.png](assets/SecurityCodeAnalysis2.PNG)
 
 ![SecurityCodeAnalysis.png](assets/SecurityCodeAnalysis.png)
 
