@@ -418,7 +418,7 @@ If we look at the release pipeline for the infrastructure we can define which en
 
 ![ContDelDep8.png](assets/ContDelDep8.PNG)
 
-![ContDelDep9.png](assets/ContDelDep9.PNG)
+![ContDelDep9.png](assets/ContDelDep17.PNG)
 
 In this case infrastructure code is stored in the GIT repository - ARM templates together with parameters json files:
 
