@@ -258,8 +258,8 @@ I created separate GIT repositories:
 
 In the Azure DevOps I created two separate Build pipelines:
 
-1. CI-clean-arch-asp-net-core-web-api - to build package with Web API application
-2. CI-clean-arch-dev-infrastructure - to build the package with the infrastructure code for dev environment (I am using Infrastructure as a Code approach - IAC)
+1. *CI-clean-arch-asp-net-core-web-api* - to build package with Web API application
+2. *CI-clean-arch-dev-infrastructure* - to build the package with the infrastructure code for dev environment (I am using Infrastructure as a Code approach - IAC)
 
 ![ContDelDep4.png](assets/ContDelDep4.PNG)
 
