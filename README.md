@@ -82,11 +82,12 @@ In the case of the project I prepared in this repository you can see that the st
 
 ![CleanArchitectureDiagram7.png](assets/CleanArchitectureDiagram7.PNG)
 
-**CleanArchitecture.WebAPI** project contains controllers, SignalR Hub, dependencies registrations and request handlers (Mediator pattern is used):
+**CleanArchitecture.WebAPI** project contains controllers, SignalR Hub, dependencies registrations and request handlers (Mediator pattern is applied using [MediatR](https://github.com/jbogard/MediatR)):
 
 ![CleanArchitectureDiagram8.png](assets/CleanArchitectureDiagram8.PNG)
 
-**CleanArchitecture.Core.UnitTests** project contains unit tests for the services defined in the Core project:
+**CleanArchitecture.Core.UnitTests** project contains unit tests for the services defined in the Core project.
+I used [AutoFixture](https://github.com/AutoFixture/AutoFixture) together with [Moq](https://github.com/Moq/moq4/wiki/Quickstart) to write unit tests:
 
 ![CleanArchitectureDiagram9.png](assets/CleanArchitectureDiagram9.PNG)
 
