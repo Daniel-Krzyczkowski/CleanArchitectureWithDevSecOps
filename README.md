@@ -1,7 +1,7 @@
 ![CleanDevSecOps.png](assets/CleanDevSecOps.png)
 
 # Introduction
-#### Clean Architecture with DevSecOps is the showcase project to present best DevSevOps practices together with Clean Architecture patterns for building ASP .NET Core Web APIs hosted on Microsoft Azure cloud.
+#### Clean Architecture with DevSecOps is the showcase project to present best DevSecOps practices together with Clean Architecture patterns for building ASP .NET Core Web APIs hosted on Microsoft Azure cloud.
 
 I would like to start with a great sentence from Gerald Weinberg:
 
