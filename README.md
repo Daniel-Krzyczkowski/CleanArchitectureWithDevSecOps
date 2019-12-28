@@ -439,7 +439,7 @@ Solution monitoring is a very important part of the DevOps loop.
 In the Azure DevOps I have also set up dashboard to monitor build and release pipelines status:
 ![Dashboards1.png](assets/Dashboards1.PNG)
 
-In this case, I used [Azure Application Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview) service which is integrated with my solution:
+In this case, I used [Azure Application Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview) service which is integrated with my solution. In the Web API project I have integrated [Serilog](https://serilog.net/) to collect information about the issues:
 
 ![Dashboards2.png](assets/Dashboards2.PNG)
 
