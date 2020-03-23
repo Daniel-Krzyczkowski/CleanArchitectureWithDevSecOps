@@ -3,6 +3,8 @@
 # Introduction
 #### Clean Architecture with DevSecOps is the showcase project to present best DevSecOps practices together with Clean Architecture patterns for building ASP .NET Core Web APIs hosted on Microsoft Azure cloud.
 
+![.NET Core](https://github.com/Daniel-Krzyczkowski/CleanArchitectureWithDevSecOps/workflows/.NET%20Core/badge.svg)
+
 I would like to start with a great sentence from Gerald Weinberg:
 
 *"If builders built buildings the way programmers wrote programs, then the first woodpecker that came along would destroy civilization."*
